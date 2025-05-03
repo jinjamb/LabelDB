@@ -1,0 +1,55 @@
+//MCD Merise vers MONGODB
+
+// collection 'groupes'
+{
+  "_id": 2,
+  "nom": "Metox",
+  "genre_musical": "Hip-hop",
+  "date_creation": "2006-05-06",
+  "membres": [1, 4, 5]
+}
+
+// collection 'artistes'
+{
+  "_id": 1,
+  "nom": "Corabel",
+  "genre_musical": "Pop",
+  "date_naissance": "1991-05-05",
+  "groupe": [2],
+  "manager_id": 12
+}
+
+// collection 'albums'
+{
+  "_id": 1,
+  "titre": "Quillan",
+  "date_sortie": "2009-07-31",
+  "producteur_id": 14,
+  "groupe_id": 2,
+  "musiques": [15, 18, 22]
+}
+
+
+// collection 'managers'
+{
+  "_id": 12,
+  "nom": "Mick",
+  "email": "myukhovb@theatlantic.com",
+  "producteur_id": 14
+}
+
+
+// collection 'producteurs'
+{
+  "_id": 14,
+  "nom": "Dorrie",
+  "societe": "Hauck and Sons"
+}
+
+// collection 'musiques'
+{
+  "_id": 15,
+  "titre": "Can Go Through Skin",
+  "duree": 3,
+  "artiste_id": 1
+}
