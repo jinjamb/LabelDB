@@ -41,6 +41,6 @@ rs.initiate({
 sh.addShard("shard1/localhost:27010,localhost:27011,localhost:27012")
 sh.addShard("shard2/localhost:27013,localhost:27014,localhost:27015")
 sh.addShard("shard3/localhost:27016,localhost:27017,localhost:27018")
-  
+
 sh.enableSharding("labeldb")
   

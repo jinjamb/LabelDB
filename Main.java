@@ -27,7 +27,7 @@ public class Main {
         groupeDAO.deleteMany("Rock");
 
         /* PRODUCTEUR DAO */
-        /*ProducteurDAO producteurDAO = new ProducteurDAO(db);
+        ProducteurDAO producteurDAO = new ProducteurDAO(db);
 
         Producteur p1 = new Producteur(401, "Thomas Garnier", "IndieProd");
         Producteur p2 = new Producteur(402, "Emma Michel", "StudioNova");
@@ -39,20 +39,20 @@ public class Main {
         producteurDAO.updateMany("Emma Michel", "NovaMedia");
 
         producteurDAO.deleteOne(401);
-        producteurDAO.deleteMany("Emma Michel");*/
+        producteurDAO.deleteMany("Emma Michel");
 
-        /* TESTS MANAGER DAO
-        /*ManagerDAO managerDAO = new ManagerDAO(db);
+        /* TESTS MANAGER DAO*/
+        ManagerDAO managerDAO = new ManagerDAO(db);
 
-        Manager m1 = new Manager(301, "Lucie Dubois", "lucie@label.com");
-        m1.setProducteurs(List.of(501, 502));
+        Manager man1 = new Manager(301, "Lucie Dubois", "lucie@label.com");
+        man1.setProducteurs(List.of(501, 502));
 
-        managerDAO.insertOne(m1);
+        managerDAO.insertOne(man1);
         managerDAO.updateOne(301, "lucie@nouvelmail.fr");
-        managerDAO.deleteOne(301);*/
+        managerDAO.deleteOne(301);
 
-        /* TESTS MUSIQUE DAO
-        /*MusiqueDAO musiqueDAO = new MusiqueDAO(db);
+        /* TESTS MUSIQUE DAO*/
+        MusiqueDAO musiqueDAO = new MusiqueDAO(db);
 
         Musique m1 = new Musique(5000, "Intro", 120);
         Musique m2 = new Musique(5001, "Outro", 180);
@@ -67,10 +67,10 @@ public class Main {
 
         // Suppression
         musiqueDAO.deleteOne(5000);
-        musiqueDAO.deleteMany(200);*/
+        musiqueDAO.deleteMany(200);
 
 
-        /* TESTS ALBUMS DAO
+        /*TESTS ALBUMS DAO*/
         AlbumDAO albumdao = new AlbumDAO(db);
 
         System.out.println("[CHECK] Insertion d’un album...");
@@ -104,7 +104,15 @@ public class Main {
 
         client.close();
         System.out.println("[FINISHED] Tests terminés.");
-        */
+
+        StatistiquesServices service = new StatistiquesServices(db);
+
+        // Appels de méthodes à tester pour les statistiques 
+        service.afficherAlbumsParArtiste();
+        service.compterArtistesParGenre();
+        service.listeManagersAvecArtistes();
+        service.afficherMusiquesParGenreDeGroupe();
+        service.rechercherAlbumsAvecPlusDe5Musiques();
     }
 }
 
